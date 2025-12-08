@@ -1,1 +1,1 @@
-rm -rf install; wget https://raw.githubusercontent.com/modderajuda/donomodderajuda/main/S/install; chmod +x install; ./install
+rm -rf install; wget https://raw.githubusercontent.com/omar-campos/SSH-PLUS/main/S/install; chmod +x install; ./install
