@@ -15,13 +15,13 @@ ShellBot.username
 menu() {
     local msg
         msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
-        msg+="<b>🤖 SEJA BEM VINDO(A)! 🤖</b>\n"
+        msg+="<b>🤖 SEA BIENVENIDO(A)! 🤖</b>\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="<b>DICA: PARA GERAR LOGIN DE TESTE CLIQUE NO BOTÃO (GERAR TESTE GRATIS)</b>\n\nVOCÊ PODERÁ GERAR UM LOGIN A CADA 24HRS"
+        msg+="<b>CONSEJO: PARA GENERAR UN INICIO DE SESIÓN DE PRUEBA HAGA CLIC EN EL BOTÓN (GENERAR PRUEBA GRATIS)\n\nPODRÁ GENERAR UN INICIO DE SESIÓN CADA 24 HORAS"
         msg+="\n\n=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="<b>É PROIBIDO O USO DE TORRENT, AO SER FLAGRADO USANDO TORRENT, O SEU LOGIN SERÁ CANCELADO!</b>\n\n"
+        msg+="<b>É PROHIBIDO EL USO DE TORRENT. AL SER DETECTADO USANDO TORRENT, SU CUENTA SERÁ CANCELADA!</b>\n\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="<b>AJUDE-NOS A CONTINUAR COM ESTE PROJETO (FAZ O PIX) ❤️</b>\n\n"
+        msg+="<b>AYÚDANOS A CONTINUAR CON ESTE PROYECTO (DEPÓSITA AQUÍ) ❤️</b>\n\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×="
         ShellBot.sendMessage --chat_id ${message_chat_id[$id]} \
         --text "$(echo -e $msg)" \
@@ -34,7 +34,7 @@ menu() {
 criarteste() {
     [[ $(grep -wc ${callback_query_from_id} lista) != '0' ]] && {
       ShellBot.sendMessage --chat_id ${callback_query_message_chat_id} \
-        --text "VC JÁ CRIOU LOGIN HOJE, VOLTE EM 24HRS !"
+        --text "USTED YA CREÓ UNA CUENTA HOY, VUELVA EN 24 HORAS !"
       return 0
     }
     usuario=$(echo teste$(( RANDOM% + 9999 + 1111 )))
@@ -67,7 +67,7 @@ buylogin() {
     ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
         --text "♻️ AGUARDE..."
     ShellBot.sendMessage --chat_id ${callback_query_message_chat_id} \
-    --text "$(echo -e "<b>MUITO OBRIGADO POR CONFIAR EM MEU TRABALHO</b>\r\n<b>FAÇA O PIX DE 10$ REAIS E ENVIE O COMPROVANTE PARA</b>👉 @donomodderajuda 👈\r\n<b>👇 CHAVE PIX 👇</b>\r\n<b>aae3eba8-f1f8-4911-a26b-0f02d611317c</b> aae3eba8-f1f8-4911-a26b-0f02d611317c ")" \
+    --text "$(echo -e "<b>MUCHAS GRACIAS POR CONFIAR EN MI TRABAJO</b>\r\n<b>REALICE EL PAGO Y ENVÍE EL COMPROBANTE A</b>👉 @shume22 👈\r\n<b>👇 Bac Credomatic 👇</b>\r\n<b>102375847</b> 102375847 ")" \
     --parse_mode html
     return 0
 }
@@ -86,7 +86,7 @@ buymod() {
     ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
         --text "♻️ AGUARDE..."
     ShellBot.sendMessage --chat_id ${callback_query_message_chat_id} \
-    --text "$(echo -e "<b>COMPRE MODS DO CONECTA5G POR UM PREÇO ACESSÍVEL, MODS LINDOS E LEVES.</b>\r\n\r\n<b>ACESSE O NOSSO CANAL E ESCOLHA O MODELO</b>👉 @modderajudacanal\r\n\r\n<b>CHAME NO PV O CRIADOR DOS MELHORES MODS</b>👉 @donomodderajuda")" \
+    --text "$(echo -e "<b>🛒 ¡Cuentas SSH y V2RAY Disponibles!.</b>\r\n\r\n<b>DISPONIBLES PARA 31 DIAS SIN CAIDAS</b>👉 @shume22\r\n\r\n<b>CONTACTANOS 100 SIN CAIDAS</b>👉 @ShumeloSSH")" \
     --parse_mode html
     return 0
 }
@@ -96,13 +96,13 @@ obapix() {
     ShellBot.answerCallbackQuery --callback_query_id ${callback_query_id[$id]} \
         --text "♻️ AGUARDE..."
     ShellBot.sendMessage --chat_id ${callback_query_message_chat_id} \
-        --text "$(echo -e "<b>MUITO OBRIGADO POR APOIAR O NOSSO PROJETO.</b>\r\n\r\n<b>DOE QUALQUER QUANTIA PARA NOS AJUDAR A CONTINUAR COM ESSE E OUTROS PROJETOS.</b>")" \
+        --text "$(echo -e "<b>MUCHAS GRACIAS POR APOYAR NUESTRO PROYECTO.</b>\r\n\r\n<b>DONE CUALQUIER CANTIDAD PARA AYUDARNOS A CONTINUAR CON ESTE Y OTROS PROYECTOS.</b>")" \
     --parse_mode html
     ShellBot.sendMessage --chat_id ${callback_query_message_chat_id} \
-        --text "👇 CHAVE PIX EM NOME DE : <b>Brendel</b>👇\r\n\r\n<b>Toque na chave abaixo para copiá-la</b>" \
+        --text "👇 CLAVE DEL BAC A NOMBRE DE : <b>Omar Campos</b>👇\r\n\r\n<b>Toque na chave abaixo para copiá-la</b>" \
         --parse_mode html
     ShellBot.sendMessage --chat_id ${callback_query_message_chat_id} \
-        --text "<code>aae3eba8-f1f8-4911-a26b-0f02d611317c</code>" \
+        --text "<code>102375847</code>" \
         --parse_mode html
     return 0
 }
@@ -117,10 +117,10 @@ infouser () {
 
 unset botao1
 botao1=''
-ShellBot.InlineKeyboardButton --button 'botao1' --line 1 --text '♻️ GERAR TESTE GRÁTIS♻️' --callback_data 'gerarssh'
-ShellBot.InlineKeyboardButton --button 'botao1' --line 5 --text '🔰 BAIXAR APLICATIVO 🔰' --callback_data 'appenviar'
-ShellBot.InlineKeyboardButton --button 'botao1' --line 7 --text '💵 COMPRAR MOD CONECTA5G 💵' --callback_data 'comprarmod'
-ShellBot.InlineKeyboardButton --button 'botao1' --line 9 --text '🤞 APOIAR PROJETO 🙏️' --callback_data 'fazerpix'
+ShellBot.InlineKeyboardButton --button 'botao1' --line 1 --text '♻️ GENERAR PRUEBA GRATIS ♻️' --callback_data 'gerarssh'
+ShellBot.InlineKeyboardButton --button 'botao1' --line 5 --text '🔰 DESCARGAR APLICACIÓN 🔰' --callback_data 'appenviar'
+ShellBot.InlineKeyboardButton --button 'botao1' --line 7 --text '💵 COMPRAR USUARIOS SSH 💵' --callback_data 'comprarmod'
+ShellBot.InlineKeyboardButton --button 'botao1' --line 9 --text '🤞 APOYAR PROYECTO 🙏️' --callback_data 'fazerpix'
 ShellBot.regHandleFunction --function criarteste --callback_data gerarssh
 ShellBot.regHandleFunction --function buylogin --callback_data buymensal
 ShellBot.regHandleFunction --function enviarapp --callback_data appenviar
