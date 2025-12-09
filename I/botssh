@@ -17,7 +17,7 @@ menu() {
         msg="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n"
         msg+="<b>🤖 SEA BIENVENIDO(A)! 🤖</b>\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
-        msg+="<b>CONSEJO: PARA GENERAR UN INICIO DE SESIÓN DE PRUEBA HAGA CLIC EN EL BOTÓN (GENERAR PRUEBA GRATIS)\n\nPODRÁ GENERAR UN INICIO DE SESIÓN CADA 24 HORAS"
+        msg+="<b>CONSEJO: PARA GENERAR UN INICIO DE SESIÓN DE PRUEBA HAGA CLIC EN EL BOTÓN (GENERAR PRUEBA GRATIS)\n\nPODRÁ GENERAR UN INICIO DE SESIÓN CADA 6 HORAS"
         msg+="\n\n=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
         msg+="<b>É PROHIBIDO EL USO DE TORRENT. AL SER DETECTADO USANDO TORRENT, SU CUENTA SERÁ CANCELADA!</b>\n\n"
         msg+="=×=×=×=×=×=×=×=×=×=×=×=×=×=\n\n"
@@ -40,8 +40,8 @@ criarteste() {
     usuario=$(echo teste$(( RANDOM% + 9999 + 1111 )))
     senha=$((1234))
     limite='2'
-    dias='1'
-    tuserdate=$(date '+%C%y/%m/%d' -d " +1 days")
+    dias='6'
+    tuserdate=$(date '+%C%y/%m/%d' -d " +6 hours")
     useradd -M -N -s /bin/false $usuario -e $tuserdate > /dev/null 2>&1
     (echo "$senha";echo "$senha") | passwd $usuario > /dev/null 2>&1
     echo "$senha" > /etc/SSHPlus/senha/$usuario
@@ -57,7 +57,7 @@ rm -rf /etc/SSHPlus/userteste/$usuario.sh" > /etc/SSHPlus/userteste/$usuario.sh
     echo ${callback_query_from_id} >> lista
     # - ENVIA O SSH
     ShellBot.sendMessage --chat_id ${callback_query_message_chat_id} \
-    --text "$(echo -e "🤩 <b>LOGIN CRIADO</b> 🤩 \r\n\r\n🚻 <b>USUARIO:</b> <code>$usuario</code>\r\n🔐 <b>SENHA:</b> <code>$senha</code>\r\n❌ <b>LIMITE:</b> 1\r\n<b>⏰ VALIDADE:</b> $dias Dias \r\n\r\n<b>BAIXE O APLICATIVO MAIS RECENTE NO NOSSO GRUPO E FIQUE POR DENTRO DAS NOVIDADES.</b>\r\n\r\n<b>ACESSE O NOSSO GRUPO</b> @modderajudagrupo\r\n\r\n<b>ACESSE O NOSSO CANAL</b> @modderajudacanal")" \
+    --text "$(echo -e "🤩 <b>LOGIN CRIADO</b> 🤩 \r\n\r\n🚻 <b>USUARIO:</b> <code>$usuario</code>\r\n🔐 <b>SENHA:</b> <code>$senha</code>\r\n❌ <b>LIMITE:</b> 1\r\n<b>⏰ VALIDADE:</b> $dias Horas \r\n\r\n<b>BAIXE O APLICATIVO MAIS RECENTE NO NOSSO GRUPO E FIQUE POR DENTRO DAS NOVIDADES.</b>\r\n\r\n<b>ACESSE O NOSSO GRUPO</b> @shume22\r\n\r\n<b>ACESSE O NOSSO CANAL</b> @+S7QAM20MziViMjdh")" \
     --parse_mode html
     return 0
 }
