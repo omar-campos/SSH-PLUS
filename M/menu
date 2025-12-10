@@ -287,33 +287,35 @@ esac
 }
 
 checkrs () {
-while true; do
+while true $x != "ok"
+do
 clear
 echo -e "\E[38;5;18m┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓\033[0m"
-echo -e "\E[38;5;18m┃\E[44;1;37m                CHECKUSERS               \E[0m\E[38;5;18m┃"
+echo -e "\E[38;5;18m┃\E[44;1;37m                CHECKUSERS               \E[0m\E[38;5;18m┃"
 echo -e "\E[38;5;18m┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛\033[0m"
-echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;5;195mGL TUNNEL / DT TUNNEL 
-\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m➜ \E[38;5;195mCHECKUSER INDEPENDIENTE DEL MODDER
+echo -e "\E[38;5;196m|\E[38;5;33m01\E[38;5;196m|\033[1;37m➜ \E[38;5;195mGL TUNNEL / DT TUNNEL 
+\E[38;5;196m|\E[38;5;33m02\E[38;5;196m|\033[1;37m➜ \E[38;5;195mCHECKUSER INDEPENDENTE DO MODDER
 \E[38;5;196m|\E[38;5;33m00\E[38;5;196m|\033[1;37m➜ \E[38;5;195mMENU"
 echo ""
 echo -ne "\033[1;32mOQUE DESEJA FAZER \033[1;37m?\033[1;31m?\033[1;37m : "; read x
-case "$x" in 
+case "$x" in 
 	1 | 01)
-   clear
+   clear
 	gldt
 	;;
 	2 | 02)
 	clear
-	bash <(curl -sL https://raw.githubusercontent.com/Niltonjuniornzx/CheckUser/main/install.sh)
+	initcheck
 	;;
-   0 | 00)
-   menu
-   clear
-   break
-   ;;
-   *)
-   echo -e "\n\033[1;31mOpcao invalida !\033[0m"
-   sleep 0.5
+   0 | 00)
+   menu
+   clear
+   ;;
+   *)
+   echo -e "\n\033[1;31mOpcao invalida !\033[0m"
+   sleep 0.5
+   clear
+   checkrs
 esac
 done
 }
