@@ -273,7 +273,7 @@ inst_depedencias() {
         cd $HOME
         sudo kill -9 $(lsof -t -i:5454)
         pkill -9 -f "/root/checkuser/checkuser.py"
-        git clone https://github.com/modderajuda/checkuser.git
+        git clone https://github.com/omar-campos/checkuser.git
 chmod +x /root/checkuser/checkuserMenu.sh
         mv -f $HOME/checkuserMenu.sh /root/checkuser/checkuserMenu.sh
         chmod 777 /root/checkuser/checkuserMenu.sh
